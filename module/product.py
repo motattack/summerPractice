@@ -3,7 +3,7 @@ from urllib.parse import urljoin
 
 from selectolax.parser import HTMLParser
 
-from module.common import clear_price, calculate_hash, delete_cvs, to_csv
+from module.common import clear_price, calculate_hash, to_csv
 from module.request import extract, get_html
 
 
@@ -69,8 +69,6 @@ def parse_links(html):
 
 
 def pagination_loop(data, debug=False):
-    delete_cvs()
-
     if debug:
         print(f'[info] start "{data[0]}"')
     url = data[1]

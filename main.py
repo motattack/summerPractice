@@ -1,5 +1,5 @@
 from module.category import parse_category, categorize
-from module.common import stopwatch, save_json, load_json
+from module.common import stopwatch, save_json, load_json, delete_cvs
 from module.product import pagination_loop
 from module.request import get_html
 
@@ -16,6 +16,7 @@ def main():
         res = load_json('categories.json')
     categorize(res)
     main_categories = load_json('main_cat.json')
+    delete_cvs()
     for key in main_categories:
         pagination_loop(main_categories[key], True)
 
